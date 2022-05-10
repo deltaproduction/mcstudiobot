@@ -69,8 +69,8 @@ def message_handler(message):
             if message.text.lower().strip() == "end":
                 income_in = False
                 database.add_user_income(user_id, *income)
-                income = list()
                 bot.send_message(message.chat.id, "Данные успешно записаны!" if income else "Данные не записаны!")
+                income = list()
 
             else:
                 bot.send_message(message.chat.id, "Пожалуйста, вводите только числа")
@@ -88,8 +88,8 @@ def message_handler(message):
             if message.text.lower().strip() == "end":
                 expenses_in = False
                 database.add_user_expenses(user_id, *expenses)
-                expenses = list()
                 bot.send_message(message.chat.id, "Данные успешно записаны!" if expenses else "Данные не записаны!")
+                expenses = list()
 
             else:
                 bot.send_message(message.chat.id, "Пожалуйста, вводите только числа")
